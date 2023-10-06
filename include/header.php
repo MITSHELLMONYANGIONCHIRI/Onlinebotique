@@ -22,8 +22,8 @@
         <div class="container">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="tel:+254777955511">
-                        <i class="bi bi-telephone"></i> +254 777 955 511
+                    <a class="nav-link" href="tel:+254713 541965">
+                        <i class="bi bi-telephone"></i> +254 713 541965
 
                     </a>
                 </li>
