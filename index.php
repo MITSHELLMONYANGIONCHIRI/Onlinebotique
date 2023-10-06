@@ -173,21 +173,9 @@
             <div style="margin-top: 20px;" class="col-lg-9">
 
 
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                <div style="margin-top: 50px;" id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <!--search icon for clothes --->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div style="width: 900px;" class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Search for clothes" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                                        <i class="fas fa-search"></i></i> <!-- Adjust the font-size as needed -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="carousel-item active" style="height: 410px;">
                             <img class="img-fluid" src="assets/img/banner.jpeg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -281,6 +269,528 @@
             </style>
         </div>
     </div>
+
+    <section id="featured-products">
+    <div class="container">
+        <h2 style="text-align: center;">Featured Products</h2>
+        <div class="row">
+            <!-- First featured product box -->
+            <div class="col-md-6">
+                <div class="product-box" style="background-image: url('assets/img/women-clothes-img.png');">
+                    <div class="product-info">
+                    <h3>Women's Clothing</h3>
+                    <p>Discover the latest fashion trends for women.</p>
+                        <p>Under 1M</p>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second featured product box -->
+            <div class="col-md-6">
+                <div class="product-box" style="background-image: url('assets/img/dress-shirt-img.png');">
+                    <div class="product-info">
+                    <h3>Trendy Shirts Collection</h3>
+                    <p>Explore our collection of trendy shirts.</p>
+                        <p>Under 1M</p>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="car-listings">
+    <div class="container">
+        <h2 style="text-align: center;">Boutique Sell</h2>
+        <div class="row">
+            <!-- Boutique clothing listing box 1 -->
+            <div class="col-md-2 car-box">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-12%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Stylish Shirt</h3>
+                    <p>
+                        <span class="original-price">KSh 1,500.00</span><br>
+                        <span class="discounted-price">KSh 1,320.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 2 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-8%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Casual Jeans</h3>
+                    <p>
+                        <span class="original-price">KSh 1,800.00</span><br>
+                        <span class="discounted-price">KSh 1,650.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 3 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-15%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Elegant Dress</h3>
+                    <p>
+                        <span class="original-price">KSh 2,200.00</span><br>
+                        <span class="discounted-price">KSh 1,870.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 4 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-10%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Fashionable Skirt</h3>
+                    <p>
+                        <span class="original-price">KSh 1,800.00</span><br>
+                        <span class="discounted-price">KSh 1,620.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 5 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="car-listings">
+    <div class="container">
+        <div class="row">
+            <!-- Boutique clothing listing box 1 -->
+            <div class="col-md-2 car-box">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-12%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Stylish Shirt</h3>
+                    <p>
+                        <span class="original-price">KSh 1,500.00</span><br>
+                        <span class="discounted-price">KSh 1,320.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 2 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-8%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Casual Jeans</h3>
+                    <p>
+                        <span class="original-price">KSh 1,800.00</span><br>
+                        <span class="discounted-price">KSh 1,650.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 3 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-15%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Elegant Dress</h3>
+                    <p>
+                        <span class="original-price">KSh 2,200.00</span><br>
+                        <span class="discounted-price">KSh 1,870.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 4 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-10%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Fashionable Skirt</h3>
+                    <p>
+                        <span class="original-price">KSh 1,800.00</span><br>
+                        <span class="discounted-price">KSh 1,620.00</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Boutique clothing listing box 5 -->
+            <div class="col-md-2 car-box" style="margin-left: 20px;">
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    #load-more-button {
+        background: none;
+        border: none;
+        color: #333; 
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        text-align: center; 
+        margin-top: 20px; 
+    }
+
+    #load-more-button:before, #load-more-button:after {
+        content: "";
+        position: absolute;
+        background-color: #333; 
+        height: 2px;
+        width: 70px; 
+        top: -10px; 
+    }
+
+    #load-more-button:after {
+        top: 100%; 
+    }
+
+    #load-more-button-wrapper {
+        text-align: center; /* Center the button */
+    }
+</style>
+<!-- Load more button -------------------------------- -->
+<section id="car-listings">
+    <div class="container">
+        <div class="row">
+            <!-- your existing clothing listing boxes with display: none -->
+            <div class="col-md-2 car-box" style="margin-top: 20px; display: none;">
+                <!-- ... rest of the content ... -->
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="col-md-2 car-box" style="margin-top: 20px; display: none;">
+                <!-- ... rest of the content ... -->
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="col-md-2 car-box" style="margin-top: 20px; display: none;">
+                <!-- ... rest of the content ... -->
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+                
+            </div> <div class="col-md-2 car-box" style="margin-top: 20px; display: none;">
+                <!-- ... rest of the content ... -->
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+                
+            </div> <div class="col-md-2 car-box" style="margin-top: 20px; display: none;">
+                <!-- ... rest of the content ... -->
+                <div class="car-info">
+                    <img src="assets\img\dress-shirt-img.png" alt="Clothing Image">
+                    <span class="discount">-18%</span>
+                    <div class="icons">
+                        <i class="far fa-heart" data-tooltip="Wishlist"></i>
+                        <i class="fas fa-shopping-cart" data-tooltip="Add to Cart"></i>
+                        <i class="fas fa-exchange-alt" data-tooltip="Compare"></i>
+                        <i class="far fa-eye" data-tooltip="View"></i>
+                    </div>
+                    <h3>Formal Blazer</h3>
+                    <p>
+                        <span class="original-price">KSh 2,500.00</span><br>
+                        <span class="discounted-price">KSh 2,050.00</span>
+                    </p>
+                </div>
+                
+            </div>
+            
+            <!-- Add more clothing boxes as needed -->
+        </div>
+        
+    </div>
+</section>
+
+<div id="load-more-button-wrapper">
+    <button id="load-more-button" onclick="loadMore()">Load More...</button>
+</div>
+<script>
+    //to show 5 by 5 when clicked
+    function loadMore() {
+        //get all the hidden clothing boxes
+        var hiddenClothingBoxes = document.querySelectorAll('#car-listings .car-box[style*="display: none"]');
+        //loop through the first 5 hidden clothing boxes
+        for (var i = 0; i < 5; i++) {
+            //if there are no more hidden clothing boxes, exit the loop
+            if (!hiddenClothingBoxes[i]) {
+                break;
+            }
+            //show the clothing box
+            hiddenClothingBoxes[i].style.display = 'block';
+        }
+    }
+</script>
+
+
+<style>
+    .original-price {
+    text-decoration: line-through;
+    color: red;
+}
+
+#car-listings .car-box:first-child {
+    margin-left: 50px;
+}
+
+    .icons i[data-tooltip] {
+    position: relative;
+}
+
+.icons i[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.1em;
+    border-radius: 0.2em;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+    .car-box {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.car-box:hover {
+    transform: translateY(-5px);
+}
+
+.car-box img {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px;
+}
+
+.car-info h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.car-info p {
+    margin: 0;
+}
+
+.icons {
+    position: absolute;
+    top: 80%; /* Adjust the top position to position the icons lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.car-box:hover .icons {
+    opacity: 1;
+    top: 61%; /* Adjust the top position on hover */
+}
+
+
+.car-box:hover .icons {
+    opacity: 1;
+}
+.icons i {
+    color: white;
+    font-size: 1.2em;
+}
+
+.product-box {
+    position: relative;
+    height: 300px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f9f9f9;
+}
+
+
+.product-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+}
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 24px; 
+    color: red;
+}
+
+.product-info p {
+    font-size: 16px; 
+    margin-bottom: 10px;
+    color: black;
+font-weight: bold;
+}
+
+</style>
+    
+
     <!-- Add this script at the end of your HTML file -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
