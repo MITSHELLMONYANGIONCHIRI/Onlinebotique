@@ -1,0 +1,108 @@
+.carousel-button {
+  background-image: url('assets/img/btn-brush-bg-2.png');
+  background-color: transparent; /* Set the background color to transparent */
+  background-size: cover;
+  padding:5px 30px;
+margin: 100px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.carousel-button:hover {
+  opacity: 0.8; /* Adjust opacity on hover as needed */
+}
+.carousel-button1 {
+  background-image: url('assets/img/btn-brush-bg-1.png');
+  background-color: transparent; /* Set the background color to transparent */
+  background-size: cover;
+  padding:5px 30px;
+margin: 100px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.carousel-button1:hover {
+  opacity: 0.8; /* Adjust opacity on hover as needed */
+}
+
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.carousel-dot.active {
+  background-color: red;
+}
+
+/* Add styles for carousel slides and content */
+.carousel-slide {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-slide img {
+  width: 50%;
+  height: auto;
+  margin-top: -60px;
+
+}
+
+.carousel-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.carousel-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  margin-top: 60px;
+}
+
+.carousel-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+
+}
+
+.carousel-content .description {
+  font-size: 14px;
+}
+
+/* Styles for previous and next buttons */
+.prev-button, .next-button {
+  position: absolute;
+  top: 60%;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+.prev-button {
+  left: 10px;
+  transform: translateY(-50%);
+
+}
+
+.next-button {
+  right: 10px;
+  transform: translateY(-50%);
+}
+

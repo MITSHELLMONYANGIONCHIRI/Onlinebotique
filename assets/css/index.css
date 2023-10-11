@@ -1,0 +1,151 @@
+.featured .banner-features {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.featured .banner-features:hover {
+  transform: translateY(-10px);
+}
+
+.featured .banner-features img {
+  max-width: 100px;
+  height: auto;
+}
+
+.featured .banner-features h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6 {
+     border-radius: 5px;
+
+}
+.bg-1 {
+  background-color: #fddde4 !important;
+}
+
+.bg-2 {
+  background-color: #cdebbc !important;
+}
+
+.bg-3 {
+  background-color: #d1e8f2 !important;
+}
+
+.bg-4 {
+  background-color: #cdd4f8 !important;
+}
+
+.bg-5 {
+  background-color: #f6dbf6 !important;
+}
+
+.bg-6 {
+  background-color: #fff2e5 !important;
+}
+
+
+.tab-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab-header .view-more {
+  font-family: "Spartan", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 2px solid #cce7d0;
+  margin-bottom: 20px;
+}
+
+.tab-header .view-more i {
+  margin-left: 5px;
+  margin-top: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.tab-header .view-more:hover i {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/* Tab header styling */
+.tab-header .nav-item {
+  border-radius: 10px 10px 0 0; 
+  margin-right: 10px; 
+}
+
+.tab-header .nav-link {
+  border: 1px solid #ccc; 
+  background-color: #f9f9f9; 
+  color: #000; 
+  padding: 10px 20px; 
+}
+
+.tab-header .nav-link.active {
+  background-color: #fde1bd; 
+  border-color: #ccc; 
+}
+
+/* Optional: Add hover effect */
+.tab-header .nav-link:hover {
+  background-color:#fde1bd; 
+}
+.product {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.1em;
+  color: #e74c3c;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.product-actions a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.product-actions a:hover {
+  color: #e74c3c;
+}
