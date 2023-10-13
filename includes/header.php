@@ -24,12 +24,12 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/shapes.css" rel="stylesheet">
   <link href="assets/css/index.css" rel="stylesheet">
-  
+
 
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-<?php include 'shapes.php'?>
+  <?php include 'shapes.php' ?>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
       <div class="social-links d-none d-md-flex align-items-center">
         <!--login and register -->
         <a href="#" class="login"><i class="bi bi-person"></i> Login</a>
-        <a href="#" class="register"><i class="bi bi-person-plus"></i> Register</a>
+        <a href="login/signup.php" class="register"><i class="bi bi-person-plus"></i> Register</a>
       </div>
     </div>
   </section>
@@ -89,6 +89,24 @@
     </div>
   </div>
   <style>
+    /* Style for the badges */
+.header-links .link-item {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+}
+
+/* Style for the badges */
+.header-links .link-item .badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 8px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
     /* Style for the element above the header */
     #above-header {
       background-color: #f8f9fa;
@@ -170,15 +188,13 @@
     .search-bar input[type="text"] {
       margin-right: 10px;
     }
-       /* Add some spacing between the icons and text */
-       .header-links .link-item {
-          display: inline-block;
-          margin-right: 15px;
-          position: relative;
-        }
 
-
-
+    /* Add some spacing between the icons and text */
+    .header-links .link-item {
+      display: inline-block;
+      margin-right: 15px;
+      position: relative;
+    }
   </style>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
@@ -189,34 +205,36 @@
       <a href="index.php" class="logo"><img src="assets/img/trendy logo.png" alt="logo"><span> Trendy botique</span></a>
 
       <nav id="navbar" class="navbar">
-        <!--category--> 
-        
-                                                                                                                  
+        <!--category-->
+
+
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Shop</a></li>
           <li><a class="nav-link scrollto" href="#services">About-Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-           
+
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <!-- Cart, Compare, Wishlist Links -->
-      <div class="header-links">
-        <a href="wishlist.html" class="link-item">
-          <i class="bi bi-heart"></i><span class="link-text">Wishlist</span>
-        </a>
-        <a href="compare.html" class="link-item">
-        <i class="fas fa-sync-alt"></i>
-</i><span class="link-text">Compare</span>
-        </a>
-        <a href="cart.html" class="link-item cart">
-          <i class="bi bi-cart"></i><span class="link-text">Cart</span>
-        </a>
-      </div>
+     <!-- Header with Wishlist and Cart links -->
+<div style="font-size: 17px" class="header-links">
+    <a style="color: #09A59A" href="wishlist.html" class="link-item" id="wishlist-link">
+        <i class="bi bi-heart"></i><span class="link-text"></span>
+        <span class="badge" id="wishlist-badge">0</span>
+    </a>
+    <a style="color: #09A59A" href="compare.html" class="link-item">
+        <i class="fas fa-sync-alt"></i><span class="link-text">Compare</span>
+    </a>
+    <a style="color: #09A59A" href="cart.html" class="link-item cart" id="cart-link">
+        <i class="bi bi-cart"></i><span class="link-text"></span>
+        <span class="badge" id="cart-badge">0</span>
+    </a>
+</div>
+
 
     </div>
   </header><!-- End Header -->
