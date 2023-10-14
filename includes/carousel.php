@@ -46,58 +46,37 @@
         margin-top: 10px;
       }
     </style>
-    <script>
-      function isFriday() {
-        const today = new Date();
-        return today.getDay() === 5; // 5 represents Friday in JavaScript's Date object
+ <script>
+    // Calculate the remaining time until Black Friday
+    function calculateTimeUntilBlackFriday() {
+      const now = new Date();
+      const blackFridayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+      while (blackFridayDate.getDay() !== 5) {
+        blackFridayDate.setDate(blackFridayDate.getDate() + 1);
       }
-
-      function calculateTimeUntilNextFriday() {
-        const now = new Date();
-
-        // Calculate the next Friday
-        let nextFriday = new Date();
-        while (nextFriday.getDay() !== 5) {
-          nextFriday.setDate(nextFriday.getDate() + 1);
-        }
-
-        // Calculate the time remaining until next Friday
-        const timeRemaining = nextFriday - now;
-
-        // Calculate days, hours, minutes, and seconds
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-        return {
-          days,
-          hours,
-          minutes,
-          seconds
-        };
+      const timeRemaining = blackFridayDate - now;
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      return { days, hours, minutes, seconds };
+    }
+    function updateCountdown() {
+      const { days, hours, minutes, seconds } = calculateTimeUntilBlackFriday();
+      if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+        document.getElementById('countdown').innerHTML = 'Black Friday is here!';
+      } else {
+        document.getElementById('countdown').innerHTML = ` ${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
-
-      function updateCountdown() {
-        const {
-          days,
-          hours,
-          minutes,
-          seconds
-        } = calculateTimeUntilNextFriday();
-
-        if (isFriday()) {
-          document.getElementById('countdown').innerHTML = 'Holla! Today is black friday go <br> grab super deals!';
-        } else {
-          document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until Black Friday!`;
-        }
-      }
+    }
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+    // Initial call to set up the countdown
+    updateCountdown();
+  </script>
 
 
-      // Call updateCountdown initially and set interval to update every second
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
     <div class="carousel-dots"></div>
     <button class="prev-button" onclick="prevCarousel()"><i class="fas fa-chevron-left"></i></button>
     <button class="next-button" onclick="nextCarousel()"><i class="fas fa-chevron-right"></i></button>
