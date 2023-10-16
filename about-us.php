@@ -2,6 +2,10 @@
 
 <?php
  include_once "includes/header.php";
+ 
+?>
+<?php
+    include "model.php"
 ?>
 
 
@@ -17,4 +21,5 @@
 <?php
 include_once "includes/footer.php";
 ?>
+
 <script src="assets/js/add-cart.js"></script>

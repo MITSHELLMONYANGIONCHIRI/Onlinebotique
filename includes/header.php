@@ -209,7 +209,7 @@
 
 
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Shop</a></li>
           <li><a class="nav-link scrollto" href="about-us.php">About-Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
