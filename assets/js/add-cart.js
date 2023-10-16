@@ -1,59 +1,57 @@
-
 let cartItems = {}; // Use an object to store cart items by product ID
 
-        function addToCart(productId, button) {
-            const messageElement = document.getElementById(`add-to-cart-message-${productId}`);
+function addToCart(productId, button) {
+    const messageElement = document.getElementById(`add-to-cart-message-${productId}`);
 
-            // Disable the button and show loading spinner
-            button.disabled = true;
-            button.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+    // Disable the button and show loading spinner
+    button.disabled = true;
+    button.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
 
-            if (!cartItems[productId]) {
-                cartItems[productId] = 1;
+    if (!cartItems[productId]) {
+        cartItems[productId] = 1;
 
-                // Stop the spinner and revert to the original icon after 2 seconds
-                setTimeout(() => {
-                    button.disabled = false;
-                    button.innerHTML = '<i class="fi-rs-shopping-bag-add"></i>';
+        // Stop the spinner and revert to the original icon after 2 seconds
+        setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = '<i class="fi-rs-shopping-bag-add"></i>';
 
-                    // Show the message immediately after stopping the spinner
-                    messageElement.innerText = 'Item added to cart';
-                    messageElement.style.display = 'block';
+            // Show the message immediately after stopping the spinner
+            messageElement.innerText = 'Item added to cart';
+            messageElement.style.display = 'block';
 
-                    // Update the cart badge after the message is displayed
-                    setTimeout(() => {
-                        updateCartBadge();
-                    }, 0);
+            // Update the cart badge after the message is displayed
+            setTimeout(() => {
+                updateCartBadge();
+            }, 0);
 
-                    // Clear the message after 2 seconds
-                    setTimeout(() => {
-                        messageElement.innerText = '';
-                        messageElement.style.display = 'none';
-                    }, 2000);
-                }, 2000);
-            } else {
-                cartItems[productId]++;
-                messageElement.innerText = 'Item already added to cart';
+            // Clear the message after 2 seconds
+            setTimeout(() => {
+                messageElement.innerText = '';
+                messageElement.style.display = 'none';
+            }, 2000);
+        }, 2000);
+    } else {
+        messageElement.innerText = 'Item already added to cart';
 
-                // Stop the spinner and revert to the original icon after 2 seconds
-                setTimeout(() => {
-                    button.disabled = false;
-                    button.innerHTML = '<i class="fi-rs-shopping-bag-add"></i>';
+        // Stop the spinner and revert to the original icon after 2 seconds
+        setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = '<i class="fi-rs-shopping-bag-add"></i>';
 
-                    // Show the message immediately after stopping the spinner
-                    messageElement.innerText = 'Item already added to cart';
-                    messageElement.style.display = 'block';
+            // Show the message immediately after stopping the spinner
+            messageElement.innerText = 'Item already added to cart';
+            messageElement.style.display = 'block';
 
-                    // Clear the message after 2 seconds
-                    setTimeout(() => {
-                        messageElement.innerText = '';
-                        messageElement.style.display = 'none';
-                    }, 2000);
-                }, 2000);
-            }
+            // Clear the message after 2 seconds
+            setTimeout(() => {
+                messageElement.innerText = '';
+                messageElement.style.display = 'none';
+            }, 2000);
+        }, 2000);
+    }
 
-            updateCartModal(); // Update the cart modal with the latest cart items
-        }
+    updateCartModal(); // Update the cart modal with the latest cart items
+}
 
         function updateCartModal() {
     const cartTableBody = document.getElementById('cartTableBody');
@@ -114,24 +112,24 @@ let cartItems = {}; // Use an object to store cart items by product ID
 }
 
 
-        function updateProductPrice(productId) {
-            const quantity = cartItems[productId];
-            let updatedPrice;
+function updateProductPrice(productId) {
+    const quantity = cartItems[productId];
+    let updatedPrice;
 
-            // Multiply the price by the quantity up to 3, after that keep it constant
-            if (quantity <= 3) {
-                const originalPrice = parseFloat(document.getElementById(`product-price-${productId}`).getAttribute('data-original-price'));
-                updatedPrice = originalPrice * quantity;
-            } else {
-                // If quantity is greater than 3, use the price for 3 items
-                const originalPrice = parseFloat(document.getElementById(`product-price-${productId}`).getAttribute('data-original-price'));
-                updatedPrice = originalPrice * 3;
-            }
+    // Multiply the price by the quantity up to 4, after that keep it constant
+    if (quantity <= 4) {
+        const originalPrice = parseFloat(document.getElementById(`product-price-${productId}`).getAttribute('data-original-price'));
+        updatedPrice = originalPrice * quantity;
+    } else {
+        // If quantity is greater than 4, use the price for 4 items
+        const originalPrice = parseFloat(document.getElementById(`product-price-${productId}`).getAttribute('data-original-price'));
+        updatedPrice = originalPrice * 4;
+    }
 
-            // Display the updated price with the currency symbol "Ksh"
-            const priceElement = document.getElementById(`product-price-${productId}-cart`);
-            priceElement.innerText = `Ksh${updatedPrice.toFixed(2)}`;
-        }
+    // Display the updated price with the currency symbol "Ksh"
+    const priceElement = document.getElementById(`product-price-${productId}-cart`);
+    priceElement.innerText = `Ksh${updatedPrice.toFixed(2)}`;
+}
 
 
         function incrementQuantity(productId) {
@@ -191,45 +189,3 @@ let cartItems = {}; // Use an object to store cart items by product ID
     // Call the function to update the cart modal
     updateCartModal();
 };
-
-let wishlistItems = {};  // Use an object to store wishlist items by product ID
-
-function addToWishlist(productId) {
-    const messageElement = document.getElementById(`add-to-wishlist-message-${productId}`);
-    const wishlistButton = document.getElementById(`wishlist-button-${productId}`);
-
-    // Disable the button and show loading spinner
-    wishlistButton.disabled = true;
-    wishlistButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
-
-    setTimeout(() => {
-        if (!wishlistItems[productId]) {
-            wishlistItems[productId] = 1;
-            updateWishlistBadge();
-            messageElement.innerText = 'Item added to wishlist';
-            setTimeout(() => {
-                messageElement.innerText = '';
-            }, 2000);  // Clear the message after 2 seconds
-        } else {
-            // Product already in the wishlist
-            // Add handling logic for this scenario if needed
-            messageElement.innerText = 'Item already in wishlist';
-            setTimeout(() => {
-                messageElement.innerText = '';
-            }, 2000);  // Clear the message after 2 seconds
-        }
-
-        // Enable the button and revert to the original icon
-        wishlistButton.disabled = false;
-        wishlistButton.innerHTML = '<i class="fi-rs-heart"></i>';
-    }, 2000);  // Simulate a 2-second process (replace with your actual process)
-}
-
-function updateWishlistBadge() {
-    const wishlistBadge = document.getElementById('wishlist-badge');
-    let totalItems = Object.values(wishlistItems).reduce((total, count) => total + count, 0);
-    wishlistBadge.innerText = totalItems.toString();
-}
-
-// Call this function to initialize the wishlist badge
-updateWishlistBadge();

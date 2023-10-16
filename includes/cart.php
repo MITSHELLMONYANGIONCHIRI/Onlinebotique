@@ -1,15 +1,130 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
 
 
 <link rel="stylesheet" href="assets/mitshell/css/main.css">
 <link rel="stylesheet" href="assets/mitshell/css/custom.css">
-</head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="assets/js/add-cart.js"></script>
 
-<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                // Initialize the carousel with Slick Carousel
+                $('#carausel-6-columns-2').slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: false,
+                    dots: false
+                });
+
+                // Stop the carousel movement when the mouse is over the carousel
+                $('#carausel-6-columns-2').hover(function() {
+                    $('#carausel-6-columns-2').slick('slickPause');
+                }, function() {
+                    // Restart the carousel movement when the mouse leaves the carousel
+                    $('#carausel-6-columns-2').slick('slickPlay');
+                });
+            });
+        </script>
+
+    <div style="margin-top: 70px;" class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Cart Items</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTableBody">
+                            <!-- Cart items will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-bottom: 30px;" class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="payment.php" class="btn btn-primary">Proceed to Payment</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <main class="main">
+    <style>
+        /* Style for quantity controls */
+        .quantity-controls button {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .quantity-controls button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .quantity-controls button:active {
+            background-color: #ccc;
+        }
+
+        /* Apply Bootstrap table styling */
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table tbody+tbody {
+            border-top: 2px solid #dee2e6;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-controls button {
+            margin: 0 5px;
+        }
+    </style>
+
+
+
+
+
+
 
 
         <section class="product-tabs section-padding position-relative wow fadeIn animated">
@@ -44,7 +159,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-1-1.jpg" alt="">
+                                                <img id="product-image-product1" class="default-img" src="assets/mitshell/imgs/shop/product-1-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-1-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -73,38 +188,38 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product1"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product1"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product1"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Clothing</a>
                                         </div>
-                                        <h2><a href="product-details.html">Colorful Pattern Shirts</a></h2>
+                                        <h2 id="product-name-product1"><a href="product-details.html">Colorful Pattern Shirts</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
-                                                <span>90%</span>
+                                                <span id="product-percentage-product1">90%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh238.85 </span>
-                                            <span class="old-price">Ksh245.8</span>
+                                            <span id="product-price-product1" class="product-price" data-original-price="1800">Ksh1800</span>
+                                            <span class="old-price">Ksh1900</span>
                                         </div>
+
                                         <div class="product-action-1 show">
-
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product1', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product1', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
-
                                     </div>
                                 </div>
+
                             </div>
+
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                                 <div class="product-cart-wrap mb-30">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-2-1.jpg" alt="">
+                                                <img id="product-image-product2" class="default-img" src="assets/mitshell/imgs/shop/product-2-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-2-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -118,25 +233,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product2"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product2"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product2"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Clothing</a>
                                         </div>
-                                        <h2><a href="product-details.html">Plain Color Pocket Shirts</a></h2>
-                                        <div class="rating-result" title="90%">
+                                        <h2 id="product-name-product2" ><a href="product-details.html">Plain Color Pocket Shirts</a></h2>
+                                        <div class="rating-result" title="50%">
                                             <span>
-                                                <span>50%</span>
+                                                <span id="product-percentage-product2">50%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh138.85 </span>
-                                            <span class="old-price">Ksh255.8</span>
+                                        <span id="product-price-product2" class="product-price" data-original-price="1900">Ksh1900</span>
+                                            <span class="old-price">Ksh2000</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product2', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product2', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +263,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-3-1.jpg" alt="">
+                                                <img id="product-image-product3" class="default-img" src="assets/mitshell/imgs/shop/product-3-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-3-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -162,25 +277,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product3"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product3"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product3"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Shirts</a>
                                         </div>
-                                        <h2><a href="product-details.html">Vintage Floral Oil Shirts</a></h2>
+                                        <h2 id="product-name-product3"><a href="product-details.html">Vintage Floral Oil Shirts</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
-                                                <span>95%</span>
+                                                <span id="product-percentage-product3">95%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh338.85 </span>
-                                            <span class="old-price">Ksh445.8</span>
+                                        <span id="product-price-product3" class="product-price" data-original-price="2300">Ksh2300</span>
+                                            <span class="old-price">Ksh2500</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product3', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product3', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -190,7 +305,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-4-1.jpg" alt="">
+                                                <img id="product-image-product4" class="default-img" src="assets/mitshell/imgs/shop/product-4-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-4-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -204,25 +319,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product4"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product4"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product4"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Clothing</a>
                                         </div>
-                                        <h2><a href="product-details.html">Colorful Hawaiian Shirts</a></h2>
-                                        <div class="rating-result" title="90%">
+                                        <h2 id="product-name-product4"><a href="product-details.html">Colorful Hawaiian Shirts</a></h2>
+                                        <div class="rating-result" title="70%">
                                             <span>
-                                                <span>70%</span>
+                                                <span id="product-percentage-product4">70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh123.85 </span>
-                                            <span class="old-price">Ksh235.8</span>
+                                        <span id="product-price-product4" class="product-price" data-original-price="1500">Ksh1650</span>
+                                            <span class="old-price">Ksh1750</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product4', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product4', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +347,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-5-1.jpg" alt="">
+                                                <img id="product-image-product5" class="default-img" src="assets/mitshell/imgs/shop/product-5-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-5-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -246,25 +361,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product5"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product5"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product5"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Shirt</a>
                                         </div>
-                                        <h2><a href="product-details.html">Flowers Sleeve Lapel Shirt</a></h2>
+                                        <h2 id="product-name-product5"><a href="product-details.html">Flowers Sleeve Lapel Shirt</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh280 </span>
-                                            <span class="old-price">Ksh450</span>
+                                        <span id="product-price-product5" class="product-price" data-original-price="800">Ksh800</span>
+                                            <span class="old-price">Ksh1200</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product5', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product5', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -274,7 +389,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-6-1.jpg" alt="">
+                                                <img id="product-image-product6" class="default-img" src="assets/mitshell/imgs/shop/product-6-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-6-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -288,25 +403,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product6"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product6"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product6"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Shirts</a>
                                         </div>
-                                        <h2><a href="product-details.html">Ethnic Floral Casual Shirts</a></h2>
-                                        <div class="rating-result" title="90%">
+                                        <h2 id="product-name-product6"><a href="product-details.html">Ethnic Floral Casual Shirts</a></h2>
+                                        <div class="rating-result" title="50%">
                                             <span>
-                                                <span>70%</span>
+                                                <span>75%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh238.85 </span>
-                                            <span class="old-price">Ksh245.8</span>
+                                        <span id="product-price-product6" class="product-price" data-original-price="200">Ksh700</span>
+                                            <span class="old-price">Ksh800</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product6', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product6', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
 
                                     </div>
@@ -317,7 +432,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-7-1.jpg" alt="">
+                                                <img id="product-image-product7" class="default-img" src="assets/mitshell/imgs/shop/product-7-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-7-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -331,24 +446,25 @@
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
-                                    <div style="color: green;" id="add-to-wishlist-message-product7"></div>
+                                        <div style="color: green;" id="add-to-wishlist-message-product7"></div>
 
                                         <div style="color: red;" id="add-to-cart-message-product7"></div>
 
                                         <div class="product-category">
                                             <a href="shop.html">Shoes</a>
                                         </div>
-                                        <h2><a href="product-details.html">Stitching Hole Sandals</a></h2>
+                                        <h2 id="product-name-product7"><a href="product-details.html">Stitching Hole Sandals</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>98%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh1275.85 </span>
+                                        <span id="product-price-product7" class="product-price" data-original-price="1300">Ksh1300</span>
+                                        <span class="old-price">Ksh1400</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product7', this)"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product7', this)"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -358,7 +474,7 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/mitshell/imgs/shop/product-8-1.jpg" alt="">
+                                                <img id="product-image-product8" class="default-img" src="assets/mitshell/imgs/shop/product-8-1.jpg" alt="">
                                                 <img class="hover-img" src="assets/mitshell/imgs/shop/product-8-2.jpg" alt="">
                                             </a>
                                         </div>
@@ -379,15 +495,15 @@
                                         <div class="product-category">
                                             <a href="shop.html">Shirt</a>
                                         </div>
-                                        <h2><a href="product-details.html">Mens Porcelain Shirt</a></h2>
+                                        <h2 id="product-name-product8"><a href="product-details.html">Mens Porcelain Shirt</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>70%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Ksh238.85 </span>
-                                            <span class="old-price">Ksh245.8</span>
+                                        <span id="product-price-product8" class="product-price" data-original-price="2700">Ksh2700</span>
+                                            <span class="old-price">Ksh2800</span>
                                         </div>
                                         <div class="product-action-1 show">
                                             <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product8', this)"><i class="fi-rs-shopping-bag-add"></i></a>
@@ -1029,7 +1145,7 @@
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
                                                 <img class="default-img" src="assets/mitshell/imgs/shop/coming soon/1.png" alt="">
-                                                <img style="wid" class="hover-img" src="assets\mitshell\imgs\shop\coming soon\1a.png" alt="">
+                                                <img  class="hover-img" src="assets\mitshell\imgs\shop\coming soon\1a.png" alt="">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -1642,6 +1758,7 @@
                         <!--End tab-content-->
                     </div>
         </section>
+
         <section style="margin-top: 50px;" class="banners mb-15">
             <div class="container">
                 <div class="row">
@@ -1679,309 +1796,8 @@
             </div>
         </section>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Initialize the carousel with Slick Carousel
-        $('#carausel-6-columns-2').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-            dots: false
-        });
+        <?php include 'includes/new.php'; ?>
 
-        // Stop the carousel movement when the mouse is over the carousel
-        $('#carausel-6-columns-2').hover(function() {
-            $('#carausel-6-columns-2').slick('slickPause');
-        }, function() {
-            // Restart the carousel movement when the mouse leaves the carousel
-            $('#carausel-6-columns-2').slick('slickPlay');
-        });
-    });
-</script>
-<section class="section-padding">
-    <div class="container wow fadeIn animated">
-        <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
-        <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
-        <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-2-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-2-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product9')" id="wishlist-button-product9"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product9', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="hot">Hot</span>
-                    </div>
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product9">
-                <div style="color: green;" id="add-to-wishlist-message-product9"></div></div>
-
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Colorful shirt</a></h2>
-                    <div class="rating-result" title="90%">
-                        <span>90%</span>
-
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 450 </span>
-                        <span class="old-price">Ksh 500</span>
-                    </div>
-
-                </div>
-
-
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-4-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-4-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product10')" id="wishlist-button-product10"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product10', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="new">New</span>
-                    </div>
-
-
-
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product10"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product10"></div>
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Pattern Shirt</a></h2>
-                    <div class="rating-result" title="93%">
-                        <span>93%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 700 </span>
-                        <span class="old-price">Ksh 600</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-15-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-15-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product11')" id="wishlist-button-product11"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product11', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="sale">Sale</span>
-                    </div>
-
-
-
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product11"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product11"></div>
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Head cover</a></h2>
-                    <div class="rating-result" title="90%">
-                        <span>92%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 400 </span>
-                        <span class="old-price">Ksh 450</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-3-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-3-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product12')" id="wishlist-button-product12"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product12', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="hot">88%</span>
-                    </div>
-
-
-
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product12"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product12"></div>
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Western color</a></h2>
-                    <div class="rating-result" title="80%">
-                        <span>88%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 350 </span>
-                        <span class="old-price">Ksh 400</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-9-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-9-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product13')" id="wishlist-button-product13"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product13', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="hot">-25%</span>
-                    </div>
-
-
-
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product13"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product13"></div>
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Flex Shoes</a></h2>
-                    <div class="rating-result" title="90%">
-                        <span>98%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 2500 </span>
-                        <span class="old-price">Ksh 2700</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-7-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-7-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product14')" id="wishlist-button-product14"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product14', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                    <div class="product-badges product-badges-position product-badges-mrg">
-                        <span class="new">New</span>
-                    </div>
-
-
-
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product14"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product14"></div>
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html">Sandals</a></h2>
-                    <div class="rating-result" title="90%">
-                        <span>70%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 300 </span>
-                        <span class="old-price">Ksh 350</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-            <div class="product-cart-wrap small hover-up">
-                <div class="product-img-action-wrap">
-                    <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
-                            <img class="default-img" src="assets/mitshell/imgs/shop/product-1-1.jpg" alt="">
-                            <img class="hover-img" src="assets/mitshell/imgs/shop/product-1-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="product-action-1">
-                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i class="fi-rs-eye"></i></a>
-                        <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="addToWishlist('product15')" id="wishlist-button-product15"><i class="fi-rs-heart"></i></a>
-                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                    </div>
-                    <div class="product-action-1 show">
-                        <a aria-label="Add To Cart" class="action-btn hover-up" onclick="addToCart('product15', this)"><i class="fi-rs-shopping-bag-add"></i></a>
-                    </div>
-                </div>
-                <div class="product-badges product-badges-position product-badges-mrg">
-                    <span style="background-color:red" class="new">Hot</span>
-                </div>
-                <div style="color: red;" id="add-to-cart-message-product15"></div>
-                <div style="color: green;" id="add-to-wishlist-message-product15"></div>
-
-
-                <div class="product-content-wrap">
-                    <h2><a href="product-details.html"> Sleek Shirt</a></h2>
-                    <div class="rating-result" title="90%">
-                        <span>98%</span>
-                    </div>
-                    <div class="product-price">
-                        <span>Ksh 400 </span>
-                        <span class="old-price">Ksh 430</span>
-                    </div>
-                </div>
-            </div>
-            <!--End product-cart-wrap-2-->
-        </div>
-    </div>
-
-    </div>
-
-</section>
 
         <section class="section-padding">
             <section class="section-padding">
@@ -2034,8 +1850,4 @@
 
                 }
             </style>
-    </main>
     <!--End page-content-->
-</body>
-
-</html>

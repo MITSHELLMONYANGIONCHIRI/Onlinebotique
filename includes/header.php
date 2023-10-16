@@ -229,10 +229,14 @@
     <a style="color: #09A59A" href="compare.html" class="link-item">
         <i class="fas fa-sync-alt"></i><span class="link-text">Compare</span>
     </a>
-    <a style="color: #09A59A" href="cart.html" class="link-item cart" id="cart-link">
-        <i class="bi bi-cart"></i><span class="link-text"></span>
-        <span class="badge" id="cart-badge">0</span>
-    </a>
+  
+    <a style="color: #09A59A" href="#" class="link-item cart" id="cart-link" data-toggle="modal" data-target="#cartModal">
+    <i class="fi-rs-shopping-bag-add"></i>
+    <span class="badge" id="cart-badge">0</span>
+</a>
+
+
+
 </div>
 
 

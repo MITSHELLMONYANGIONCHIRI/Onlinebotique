@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta3/css/all.min.css">
-</head>
+
 
 <body>
 
@@ -82,7 +79,6 @@
     <button class="next-button" onclick="nextCarousel()"><i class="fas fa-chevron-right"></i></button>
   </section>
 
-  <script src="script.js"></script>
 </body>
 
 </html>
