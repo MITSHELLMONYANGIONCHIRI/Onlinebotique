@@ -4,7 +4,6 @@
 
 
 <body>
-
   <section class="carousel-container">
     <div class="carousel-slide">
       <div class="carousel-content">
@@ -13,7 +12,7 @@
         <div style="margin-left: 120px;" id="countdown"></div>
         <button style="margin-top: 30px;" class="carousel-button1">Shop Now</button>
       </div>
-      <img style="width: 46%;" src="assets\img\slider\slider-1.png" alt="Slide 1">
+      <img style="width: 48%;" src="assets\img\slider\slider-1.png" alt="Slide 1">
     </div>
     <div class="carousel-slide">
       <div class="carousel-content">

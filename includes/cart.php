@@ -1,38 +1,8 @@
 
 
-<link rel="stylesheet" href="assets/mitshell/css/main.css">
-<link rel="stylesheet" href="assets/mitshell/css/custom.css">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
 <script src="assets/js/add-cart.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-        <script>
-            $(document).ready(function() {
-                // Initialize the carousel with Slick Carousel
-                $('#carausel-6-columns-2').slick({
-                    slidesToShow: 6,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    arrows: false,
-                    dots: false
-                });
-
-                // Stop the carousel movement when the mouse is over the carousel
-                $('#carausel-6-columns-2').hover(function() {
-                    $('#carausel-6-columns-2').slick('slickPause');
-                }, function() {
-                    // Restart the carousel movement when the mouse leaves the carousel
-                    $('#carausel-6-columns-2').slick('slickPlay');
-                });
-            });
-        </script>
 
     <div style="margin-top: 70px;" class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
